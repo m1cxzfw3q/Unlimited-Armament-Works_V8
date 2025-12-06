@@ -16,7 +16,6 @@ import arc.math.Mathf;
 import arc.math.geom.Rect;
 import arc.struct.*;
 import arc.struct.ObjectMap.Entry;
-import com.sun.istack.NotNull;
 import mindustry.ai.types.FlyingAI;
 import mindustry.content.*;
 import mindustry.entities.abilities.MoveEffectAbility;
@@ -118,17 +117,19 @@ public class UAWUnitTypes {
 		return idMap.get(type, -1);
 	}
 
-	public static <T extends UnitType> void registerPayloadSource(@NotNull Class<T> clz) {
+	public static <T extends UnitType> void registerPayloadSource(Class<T> clz) {
 		var source = (PayloadSource) Blocks.payloadSource;
-		source.config((Class<UnitType>) clz,
-			(PayloadSource.PayloadSourceBuild build, UnitType type) -> {
-				if (source.canProduce(type) && build.unit != type) {
-					build.unit = type;
-					build.block = null;
-					build.payload = null;
-					build.scl = 0f;
-				}
-			});
+        try {
+            source.config((Class<UnitType>) clz,
+                    (PayloadSource.PayloadSourceBuild build, UnitType type) -> {
+                        if (source.canProduce(type) && build.unit != type) {
+                            build.unit = type;
+                            build.block = null;
+                            build.payload = null;
+                            build.scl = 0f;
+                        }
+                    });
+        } catch (Exception ignored) {}
 	}
 
 	public static void load() {

@@ -1,6 +1,8 @@
 package UAW.world.meta;
 
 import UAW.entities.bullet.*;
+import UAW.mdt146.ItemDisplay;
+import UAW.mdt146.LiquidDisplay;
 import arc.Core;
 import arc.func.Boolf;
 import arc.graphics.g2d.TextureRegion;
