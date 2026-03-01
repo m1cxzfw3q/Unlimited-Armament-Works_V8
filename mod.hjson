@@ -1,4 +1,4 @@
-displayName: "Unlimited Armament Works"
+displayName: "Unlimited Armament Works V8"
 name: "uaw"
 author: "Eschatologue"
 main: "UAW.UAWModLoader",
@@ -11,5 +11,5 @@ A lot of work and improvements goes into UAW, if you want to show some support o
 '''
 minGameVersion: 147
 version: v0.8
-repo: m1cxzfw3q/Unlimited-Armament-Works
+repo: m1cxzfw3q/Unlimited-Armament-Works_V8
 java: true
